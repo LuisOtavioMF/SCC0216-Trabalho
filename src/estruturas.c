@@ -124,17 +124,13 @@ void listaImprimir (Lista *L) {
   printf("\n");
 }
 
-int *listaParaVetorDeInteiros (Lista *L, int *tamanho, int (*func)(void*)) {
+void **listaParaVetor (Lista *L, int *tamanho) {
   *tamanho = L->tamanho;
-  int *vetor = malloc((*tamanho) * sizeof(int));
-  if ((*func) == NULL) {
-    return(NULL);
-  }
+  void **vetor = malloc((*tamanho) * sizeof(void *));
   
   int i = 0;
   for (No *N = L->inicial; N; N = N->proximo) {
-    vetor[i] = (*func)(N->info);
-    i++;
+    vetor[i] = N->info;
   }
 
   return(vetor);
