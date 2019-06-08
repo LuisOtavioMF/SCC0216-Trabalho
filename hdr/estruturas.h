@@ -38,7 +38,7 @@ void listaImprimir(Lista *L);
 
 // Transforma a lista em um vetor
 // O tamanho da lista, e consequentemente do vetor, e colocado em *tamanho
-void *listaParaVetor (Lista *L, int *tamanho);
+void **listaParaVetor (Lista *L, int *tamanho);
 
 // Funcao que insere um no na lista de forma que ela permaneca ordenada (desde que todos os outros nos tenham sido inseridos dessa forma)
 // (*menorQue) deve ser uma funcao que indica como as informacoes de cada no devem ser comparadas e deve retornar 1 (ou verdadeiro) quando o primeiro parametro for menor que o segundo, ou 0 (ou falso) caso contrario
